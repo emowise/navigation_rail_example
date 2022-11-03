@@ -38,7 +38,7 @@ class _SettingsState extends State<Settings> {
     return Column(
       children: [
         CheckboxListTile(
-            title: const Text("Use Leading Trailing"),
+            title: const Text("Hide Leading Trailing"),
             value: hideLeadingTrailing,
             onChanged: (value) {
               setState(() {
