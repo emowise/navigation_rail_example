@@ -1,6 +1,7 @@
 # navigation_rail_example
 
 I  explained NavigationRail widget features in this repository.
+![flutter_01](https://user-images.githubusercontent.com/50848628/199854464-ffdb20d6-7792-458f-96d4-aa042a244845.png)
 
 ## Getting Started
 
@@ -14,4 +15,4 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-![flutter_01](https://user-images.githubusercontent.com/50848628/199854464-ffdb20d6-7792-458f-96d4-aa042a244845.png)
+
