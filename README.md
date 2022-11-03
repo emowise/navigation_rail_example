@@ -1,6 +1,6 @@
-# screen_orientation
+# navigation_rail_example
 
-A new Flutter project.
+I  explained NavigationRail widget features in this repository.
 
 ## Getting Started
 
