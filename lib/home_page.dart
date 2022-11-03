@@ -27,9 +27,9 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.orange,
-          title: const Text(
-            "Navigation Rail",
-            style: TextStyle(color: Colors.white),
+          title:  Text(
+            isPortrait?"Bottom Navigation":"Navigation Rail",
+            style:const TextStyle(color: Colors.white),
           ),
         ),
         bottomNavigationBar: isPortrait
@@ -88,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                 thickness: 1,
               ),
             Expanded(
-              child: Settings(
+              child: isPortrait? const Center(child: Text("Rotate your phone for navigation rail"),): Settings(
                 onTapLeading: (value) {
                   setState(() {
                     useLeading = value;
