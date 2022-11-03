@@ -1,6 +1,7 @@
 # navigation_rail_example
 
 I  explained NavigationRail widget features in this repository.
+
 ![flutter_01](https://user-images.githubusercontent.com/50848628/199854464-ffdb20d6-7792-458f-96d4-aa042a244845.png)
 
 ## Getting Started
