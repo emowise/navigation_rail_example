@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:screen_orientation/enums/background_color_types.dart';
 import 'package:screen_orientation/enums/indicator_color_types.dart';
 import 'package:screen_orientation/enums/navigation_rail_position.dart';
 import 'package:screen_orientation/enums/navigation_rail_type.dart';
@@ -12,6 +13,7 @@ class Settings extends StatefulWidget {
   final Function(NavigationRailLabelType) onLabelType;
   final Function(double) onPositionedChanged;
   final Function(IndicatorColorTypes) onIndicatorColorChanged;
+  final Function(BackgroundColorTypes) onBackGroundColorChanged;
 
   const Settings(
       {Key? key,
@@ -21,7 +23,8 @@ class Settings extends StatefulWidget {
       required this.onLabelType,
       required this.onPositionedChanged,
       required this.onHideLeadingTrailing,
-      required this.onIndicatorColorChanged})
+      required this.onIndicatorColorChanged,
+      required this.onBackGroundColorChanged})
       : super(key: key);
 
   @override
@@ -48,7 +51,7 @@ class _SettingsState extends State<Settings> {
             SizedBox(
               height: 50,
               child: CheckboxListTile(
-                title: const Text("Hide Leading Trailing"),
+                title: const Text("Hide Leading & Trailing"),
                 value: hideLeadingTrailing,
                 onChanged: (value) {
                   setState(() {
@@ -151,7 +154,14 @@ class _SettingsState extends State<Settings> {
               labelType: groupAlignment,
               label: const Text("Position"),
             ),
-
+            DropdownListTile<BackgroundColorTypes>(
+                items: BackgroundColorTypes.values
+                    .map((e) => DropdownMenuItem(value: e, child: Text(e.name)))
+                    .toList(),
+                onChanged: (value) {
+                  widget.onBackGroundColorChanged(value!);
+                },
+                label: const Text("Background Color"))
           ],
         ))
       ],

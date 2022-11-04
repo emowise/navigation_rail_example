@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:screen_orientation/constants.dart';
+import 'package:screen_orientation/enums/background_color_types.dart';
 import 'package:screen_orientation/enums/indicator_color_types.dart';
+import 'package:screen_orientation/enums/navigation_rail_position.dart';
 import 'package:screen_orientation/enums/navigation_rail_type.dart';
 import 'package:screen_orientation/extensions/context_extensions.dart';
 import 'package:screen_orientation/widgets/settings.dart';
@@ -14,15 +16,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int selectedIndex = 0;
-  double groupAlignment = -1.0;
+  double groupAlignment = NavigationRailGroupAlignment.values.first.position;
   bool useLeading = true;
   double railWidth = 60;
   bool useIndicator = true;
   Color indicatorColor = IndicatorColorTypes.values.first.color;
   NavigationRailLabelType labelType = NavigationRailType.values.first.labelType;
   bool hideLeadingTrailing = false;
-
-
+  Color railBackgroundColor = BackgroundColorTypes.values.first.color;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +57,7 @@ class _HomePageState extends State<HomePage> {
             if (!context.isPortrait)
               NavigationRail(
                 selectedIndex: selectedIndex,
-                backgroundColor: Colors.red,
+                backgroundColor: railBackgroundColor,
                 leading: useLeading && !hideLeadingTrailing
                     ? const IconButton(
                         icon: Constants.navigationRailLeadingIcon,
@@ -85,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                   });
                 },
               ),
-            if (!context.isPortrait )
+            if (!context.isPortrait)
               const VerticalDivider(
                 width: 1,
                 thickness: 1,
@@ -128,6 +129,11 @@ class _HomePageState extends State<HomePage> {
                       onIndicatorColorChanged: (value) {
                         setState(() {
                           indicatorColor = value.color;
+                        });
+                      },
+                      onBackGroundColorChanged: (value) {
+                        setState(() {
+                          railBackgroundColor=value.color;
                         });
                       },
                     ),
