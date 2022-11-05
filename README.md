@@ -2,8 +2,8 @@
 
 I  explained NavigationRail widget features in this repository.
 
+![flutter_01](https://user-images.githubusercontent.com/50848628/200142718-67d7e4e5-e082-45c6-aa72-18a7bfbeed4c.png)
 
-![flutter_01](https://user-images.githubusercontent.com/50848628/199929029-1c961344-417d-4c94-9093-0682a53687db.png)
 
 ## Getting Started
 
